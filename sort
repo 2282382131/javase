@@ -1,0 +1,49 @@
+public class Mysort {
+
+	public static void main(String[] args) {
+		int[] arr = {2,8,10,4,9};
+		Mysort mysort=new Mysort();
+		mysort.maoPao(arr);
+		System.out.println();
+		mysort.xuanZe(arr);
+	}
+	
+	public void maoPao(int[] arr) {
+		int i,j;
+		for(i=0;i<arr.length;i++) {
+			for(j=0;j<arr.length-1-i;j++) {
+				if(arr[j]>arr[j+1]) {
+					int temp;
+					temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+		for(int a:arr) {
+			System.out.print(a+" ");
+		}
+	}
+	
+	public void xuanZe(int[] arr) {
+		int i,j,k;
+		for(i=0;i<arr.length;i++) {
+			k=i;
+			for(j=i+1;j<arr.length;j++) {
+				if(arr[j]<arr[i]) {
+					k=j;
+				}
+			}
+			if(k!=i) {
+				int temp;
+				temp=arr[k];
+				arr[k]=arr[i];
+				arr[i]=temp;
+			}
+		}
+		for(int a:arr) {
+			System.out.print(a+" ");
+		}
+	}
+
+}
