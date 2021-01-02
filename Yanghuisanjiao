@@ -1,0 +1,26 @@
+public class Yanghuisanjiao {
+
+	public static void main(String[] args) {
+		int i,j;
+		int[][] arr=new int[10][10];
+		arr[0][0]=1;
+		arr[1][0]=arr[1][1]=1;
+		for(i=2;i<arr.length;i++) {
+			arr[i][0]=1;
+			arr[i][i]=1;
+			for(j=1;j<i;j++) {
+				arr[i][j]=arr[i-1][j-1]+arr[i-1][j];
+			}
+		}
+		for(i=0;i<arr.length;i++) {
+			for(int k=0;k<arr.length-1-i;k++) {
+				System.out.print("    ");
+			}
+			for(j=0;j<=i;j++) {
+				System.out.print(arr[i][j]+"      ");
+			}
+			System.out.println();
+		}
+	}
+
+}
